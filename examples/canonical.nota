@@ -1,0 +1,5 @@
+(LoadPackage (live signal-schema 0.1.0 [(lib source)]))
+(EmitRust (live lib))
+(PackageLoaded (live signal-schema 0.1.0 [lib]))
+(RustEmitted (live lib rust))
+(Rejected (EmitRust PackageNotLoaded [slot not loaded]))

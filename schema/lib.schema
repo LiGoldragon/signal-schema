@@ -1,0 +1,26 @@
+{}
+[(LoadPackage LoadPackage) (EmitRust EmitRust)]
+[(PackageLoaded PackageLoaded) (RustEmitted RustEmitted) (Rejected Rejected)]
+{
+  SchemaSlotIdentifier String
+  PackageName String
+  PackageVersion String
+  ModuleName String
+  SchemaText String
+  RustText String
+  RejectionDetail String
+
+  SchemaModuleSource { ModuleName SchemaText }
+  SchemaModuleSources (Vector SchemaModuleSource)
+  LoadedModules (Vector ModuleName)
+
+  LoadPackage { SchemaSlotIdentifier PackageName PackageVersion SchemaModuleSources }
+  EmitRust { SchemaSlotIdentifier ModuleName }
+
+  PackageLoaded { SchemaSlotIdentifier PackageName PackageVersion LoadedModules }
+  RustEmitted { SchemaSlotIdentifier ModuleName RustText }
+
+  OperationKind [LoadPackage EmitRust]
+  RejectionReason [PackageParseFailed PackageNotLoaded ModuleNotFound RustEmissionFailed UnsupportedCurrentStackBridge]
+  Rejected { OperationKind RejectionReason RejectionDetail }
+}
