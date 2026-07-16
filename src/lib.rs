@@ -14,3 +14,4 @@ pub enum Reply { Stored(SlotSummary), Listed(Vec<SlotSummary>), Fetched(Option<S
 #[derive(Archive,Serialize,Deserialize,Clone,Copy,Debug,PartialEq,Eq)]
 pub enum Rejection { InvalidTypeSchema, RootKindMismatch, StorageFailed }
 pub fn encode_request(value:&Request)->Result<Vec<u8>,String>{rkyv::to_bytes::<rkyv::rancor::Error>(value).map(|b|b.to_vec()).map_err(|e|e.to_string())}
+pub fn encode_reply(value:&Reply)->Result<Vec<u8>,String>{rkyv::to_bytes::<rkyv::rancor::Error>(value).map(|b|b.to_vec()).map_err(|e|e.to_string())}
