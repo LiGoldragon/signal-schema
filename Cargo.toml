@@ -8,7 +8,7 @@ repository="https://github.com/LiGoldragon/signal-schema"
 description="Typed binary contract for the Core-first schema daemon"
 [dependencies]
 rkyv={version="0.8",features=["bytecheck"]}
-signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="69ce70f415f6320eefa691acf14c57f6752dff02"}
+signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="4bf4b840871f2f2f23709295f1d421922ab545bc"}
 thiserror="2"
 [lints.rust]
 unsafe_code="forbid"
