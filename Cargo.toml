@@ -1,14 +1,14 @@
 [package]
 name="signal-schema"
-version="0.2.0"
+version="0.3.0"
 edition="2024"
 rust-version="1.89"
 license="MIT OR Apache-2.0"
 repository="https://github.com/LiGoldragon/signal-schema"
-description="Typed binary contract for the Core-first schema daemon"
+description="Typed binary contract for the Encoded schema daemon"
 [dependencies]
 rkyv={version="0.8",features=["bytecheck"]}
-signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="31ab48608a3c2eab0733dcb16a3351251a70789d"}
+signal-sema-storage={git="https://github.com/LiGoldragon/signal-sema-storage.git",rev="4fa7256fe5bfe6d4d85b3acceb028d3ae529f6ef"}
 thiserror="2"
 [lints.rust]
 unsafe_code="forbid"
